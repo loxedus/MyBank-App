@@ -1,0 +1,573 @@
+/* ==============================================
+   1. GLOBAL STYLES
+   ============================================== */
+.root {
+    -fx-background-color: #F4F7FE; /* Dashboard Background */
+    -fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+/* ==============================================
+   2. LOGIN SCREEN STYLES (Restored)
+   ============================================== */
+.login-background {
+    -fx-background-color: #F0F2FD; /* Lavender Background */
+}
+
+.brand-title {
+    -fx-text-fill: #111111;
+    -fx-font-weight: bold;
+    -fx-font-size: 20px;
+}
+
+.brand-subtitle {
+    -fx-text-fill: #666666;
+    -fx-font-size: 14px;
+}
+
+.login-card {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 10;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 20, 0, 0, 0);
+    -fx-padding: 30;
+    -fx-min-width: 380;
+}
+
+/* --- Restored Spacing Classes --- */
+.input-label {
+    -fx-text-fill: #444444;
+    -fx-font-size: 13px;
+    -fx-padding: 0 0 5 0; /* ADDS GAP BELOW LABEL */
+}
+
+.forgot-link {
+    -fx-text-fill: #6200EA;
+    -fx-font-size: 12px;
+    -fx-cursor: hand;
+    -fx-padding: 5 0 15 0; /* ADDS GAP AROUND LINK */
+    -fx-alignment: center-right;
+}
+
+.footer-text {
+    -fx-text-fill: #888888;
+    -fx-font-size: 11px;
+    -fx-padding: 15 0 0 0; /* ADDS GAP AT BOTTOM */
+    -fx-alignment: center;
+}
+
+/* --- Inputs & Buttons --- */
+.text-field, .password-field {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #E5E7EB;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-padding: 10;
+    -fx-font-size: 13px;
+}
+
+.text-field:focused, .password-field:focused {
+    -fx-border-color: #6200EA;
+}
+
+.primary-button {
+    -fx-background-color: #6200EA;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-background-radius: 5;
+    -fx-cursor: hand;
+    -fx-padding: 12;
+}
+
+/* ==============================================
+   3. DASHBOARD SIDEBAR
+   ============================================== */
+.sidebar {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: transparent #E5E7EB transparent transparent;
+    -fx-border-width: 1;
+    -fx-padding: 20 10;
+}
+
+.menu-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #666666;
+    -fx-alignment: center-left;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-padding: 12 20;
+}
+
+.menu-button:hover {
+    -fx-background-color: #F3F4F6;
+    -fx-text-fill: #6200EA;
+    -fx-background-radius: 8;
+}
+
+/* ==============================================
+   4. DASHBOARD CARDS
+   ============================================== */
+.balance-card {
+    -fx-background-color: linear-gradient(to right, #6200EA, #3700B3);
+    -fx-background-radius: 20;
+    -fx-effect: dropshadow(three-pass-box, rgba(98, 0, 234, 0.3), 20, 0, 0, 5);
+    -fx-padding: 30;
+}
+
+.card-title {
+    -fx-text-fill: #E0E0E0;
+    -fx-font-size: 14px;
+}
+
+.card-balance {
+    -fx-text-fill: white;
+    -fx-font-size: 36px;
+    -fx-font-weight: bold;
+}
+
+.stat-card {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 15;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 10, 0, 0, 2);
+    -fx-padding: 20;
+}
+
+/* --- WELCOME TEXT STYLES --- */
+.welcome-title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #111111;
+}
+
+.welcome-subtitle {
+    -fx-font-size: 14px;
+    -fx-text-fill: #666666;
+}
+
+/* --- EXTRA CARD STYLES --- */
+.card-subtitle {
+    -fx-text-fill: white;
+    -fx-opacity: 0.8;
+    -fx-font-size: 12px;
+}
+
+/* --- WHITE CARD TEXT STYLES --- */
+.stat-title {
+    -fx-text-fill: #666666;
+    -fx-font-size: 14px;
+}
+
+.stat-balance {
+    -fx-text-fill: #111111;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+}
+
+.stat-subtitle {
+    -fx-text-fill: #888888;
+    -fx-font-size: 12px;
+}
+
+/* --- QUICK ACTION BUTTONS --- */
+.action-btn {
+    -fx-background-color: white;
+    -fx-background-radius: 15;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 10, 0, 0, 2);
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #666666;
+    -fx-alignment: center;
+    -fx-content-display: top; /* This forces the Icon to sit ABOVE the text */
+    -fx-graphic-text-gap: 10;
+    -fx-cursor: hand;
+}
+
+.action-btn:hover {
+    -fx-background-color: #F9FAFB; /* Slight change on hover */
+    -fx-effect: dropshadow(three-pass-box, rgba(98, 0, 234, 0.1), 15, 0, 0, 2);
+}
+
+/* --- PROFESSIONAL TABLE STYLES --- */
+
+/* 1. The Main Table Box */
+.table-view {
+    -fx-background-color: white; /* Clean white background */
+    -fx-background-radius: 15;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.03), 10, 0, 0, 0); /* Very soft shadow */
+    -fx-border-color: transparent;
+    -fx-padding: 10;
+}
+
+/* 2. Hide the ugly default gray header bar */
+.table-view .column-header-background {
+    -fx-background-color: transparent;
+}
+
+.table-view .filler {
+    -fx-background-color: transparent;
+}
+
+/* 3. Style the Column Headers (DATE, TYPE, etc.) */
+.table-view .column-header {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: #A3AED0; /* Soft Gray Text */
+    -fx-font-weight: bold;
+    -fx-font-size: 11px;
+    -fx-alignment: center-left;
+    -fx-padding: 10 0 10 0;
+}
+
+/* 4. Style the Rows (When data is added) */
+.table-row-cell {
+    -fx-background-color: white;
+    -fx-border-color: transparent transparent #F4F7FE transparent; /* Light divider line only */
+    -fx-border-width: 1;
+    -fx-padding: 8;
+}
+
+/* 5. Highlight color when you click a row */
+.table-row-cell:selected {
+    -fx-background-color: #F4F7FE; /* Light Gray highlight instead of ugly blue */
+    -fx-table-cell-border-color: transparent;
+}
+
+.table-cell {
+    -fx-text-fill: #2B3674; /* Dark Blue Text for data */
+    -fx-font-size: 14px;
+    -fx-alignment: center-left;
+}
+
+/* --- FINAL SIDEBAR STYLES --- */
+
+/* 1. The Highlighted Tab (Dashboard) */
+.nav-btn-active {
+    -fx-background-color: #F0F2FD; /* Light Purple background */
+    -fx-text-fill: #6200EA; /* Purple Text */
+    -fx-font-weight: bold;
+    -fx-border-color: transparent transparent transparent #6200EA; /* Purple Line on Left */
+    -fx-border-width: 0 0 0 4; /* Width of the line */
+    -fx-padding: 12 16;
+}
+
+/* 2. Normal Navigation Buttons */
+.nav-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: #888888;
+    -fx-font-size: 14px;
+    -fx-cursor: hand;
+    -fx-alignment: center-left;
+    -fx-padding: 12 20;
+}
+.nav-btn:hover {
+    -fx-text-fill: #6200EA;
+    -fx-background-color: #F9FAFB;
+}
+
+/* UPDATED LOGOUT STYLE for HBox */
+.logout-btn {
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+    -fx-alignment: center-left;
+    -fx-padding: 0 20;
+}
+
+.logout-btn:hover {
+    -fx-background-color: #FEF2F2; /* Light Red BG on Hover */
+}
+
+/* Force the Text and Icon inside to be Red */
+.logout-btn .label, .logout-btn .ikonli-font-icon {
+    -fx-text-fill: #DC2626;
+    -fx-fill: #DC2626;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+}
+
+/* 4. Top Header Bar (User Profile Area) */
+.top-bar {
+    -fx-background-color: white;
+    -fx-padding: 10 30;
+    -fx-alignment: center-right; /* Pushes profile to the right */
+    -fx-border-color: transparent transparent #E5E7EB transparent;
+    -fx-border-width: 1;
+}
+
+/* --- TOP PROFILE SECTION --- */
+.profile-name {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #111111;
+}
+
+.profile-handle {
+    -fx-font-size: 12px;
+    -fx-text-fill: #888888;
+}
+
+/* --- ACCOUNT PAGE CARDS --- */
+.account-card {
+    -fx-background-color: white;
+    -fx-background-radius: 20;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 5);
+}
+
+.card-top-purple {
+    -fx-background-color: linear-gradient(to right, #6200EA, #3700B3);
+    -fx-background-radius: 20 20 0 0; /* Rounds only top corners */
+    -fx-padding: 20;
+}
+
+.card-bottom-white {
+    -fx-background-color: white;
+    -fx-background-radius: 0 0 20 20; /* Rounds only bottom corners */
+    -fx-padding: 20;
+}
+
+.account-btn {
+    -fx-background-color: #F0F2FD;
+    -fx-text-fill: #6200EA;
+    -fx-font-weight: bold;
+    -fx-background-radius: 10;
+    -fx-cursor: hand;
+    -fx-alignment: center;
+}
+
+/* --- TEXT INSIDE PURPLE CARD --- */
+.account-type {
+    -fx-text-fill: white;
+    -fx-opacity: 0.9; /* Slightly see-through */
+    -fx-font-size: 12px;
+}
+
+.account-label {
+    -fx-text-fill: white;
+    -fx-opacity: 0.8; /* More see-through */
+    -fx-font-size: 10px;
+    -fx-padding: 5 0 0 0; /* Pushes it down from the icon row */
+}
+
+.account-number {
+    -fx-text-fill: white;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-font-family: "Consolas", "Monospace", sans-serif; /* Monospace looks like a real credit card */
+}
+
+/* --- TRANSACTIONS PAGE STYLES --- */
+
+/* 1. The Filter Card Container */
+.filter-card {
+    -fx-background-color: white;
+    -fx-background-radius: 15;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 10, 0, 0, 0);
+    -fx-padding: 20;
+}
+
+/* 2. Status Badges (The colored text bubbles) */
+.badge-green {
+    -fx-background-color: #E8F5E9; /* Light Green */
+    -fx-text-fill: #2E7D32; /* Dark Green Text */
+    -fx-background-radius: 15;
+    -fx-padding: 5 15;
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+}
+
+.badge-red {
+    -fx-background-color: #FFEBEE; /* Light Red */
+    -fx-text-fill: #C62828; /* Dark Red Text */
+    -fx-background-radius: 15;
+    -fx-padding: 5 15;
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+}
+
+.badge-purple {
+    -fx-background-color: #F3E5F5; /* Light Purple */
+    -fx-text-fill: #7B1FA2; /* Dark Purple Text */
+    -fx-background-radius: 15;
+    -fx-padding: 5 15;
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+}
+
+/* 3. Filter Inputs (Search, DatePicker) */
+.filter-field {
+    -fx-background-color: white;
+    -fx-border-color: #E0E0E0;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-padding: 8;
+}
+
+/* --- FILTER SECTION --- */
+.filter-card {
+    -fx-background-color: white;
+    -fx-background-radius: 15;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 10, 0, 0, 0);
+    -fx-padding: 25;
+}
+
+.filter-label {
+    -fx-text-fill: #666666;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+.filter-field {
+    -fx-background-color: white;
+    -fx-border-color: #E5E7EB;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-padding: 8;          /* Adjusted padding for better text fit */
+    -fx-font-size: 13px;
+    -fx-pref-height: 40;     /* FORCE EQUAL HEIGHT */
+    -fx-min-height: 40;      /* Prevent shrinking */
+}
+
+/* --- PROFESSIONAL TABLE --- */
+.table-view {
+    -fx-background-color: white;
+    -fx-background-radius: 15;
+    -fx-border-color: transparent;
+    -fx-padding: 0;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: transparent;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: #A3AED0;
+    -fx-font-weight: bold;
+    -fx-font-size: 11px;
+    -fx-padding: 15 0 15 0;
+}
+
+.table-row-cell {
+    -fx-background-color: white;
+    -fx-border-color: transparent transparent #F4F7FE transparent;
+    -fx-padding: 10;
+}
+
+.table-cell {
+    -fx-text-fill: #2B3674;
+    -fx-font-size: 14px;
+}
+
+/* --- FILTER HEADER --- */
+.filter-title {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #111111;
+}
+
+.filter-icon-box {
+    -fx-alignment: center-left;
+    -fx-spacing: 10;
+    -fx-padding: 0 0 15 0; /* Adds the bottom gap automatically */
+}
+
+/* --- FIX FOR DOUBLE DATEPICKER BORDERS --- */
+.date-picker .text-field {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-padding: 0; /* Removes extra padding inside the date box */
+}
+
+/* --- NOTES TEXT AREA --- */
+.notes-area {
+    -fx-background-color: white;
+    -fx-border-color: #E5E7EB; /* Same border as other fields */
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-padding: 10;
+    -fx-font-size: 13px;
+    -fx-pref-height: 100; /* Force it to be TALL */
+    -fx-min-height: 100;  /* Prevent it from shrinking */
+}
+/* Remove the default focus blue ring if you want it clean */
+.notes-area:focused {
+    -fx-border-color: #6200EA;
+}
+
+/* --- FIX FOR NOTES AREA INNER LINES --- */
+.notes-area .scroll-pane {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-padding: 0;
+}
+
+.notes-area .scroll-pane .viewport {
+    -fx-background-color: transparent;
+}
+
+.notes-area .scroll-pane .content {
+    -fx-background-color: transparent;
+}
+
+/* --- INFO BOX (REMINDER) --- */
+.info-box {
+    -fx-background-color: #E8EAF6; /* Very light indigo/blue */
+    -fx-background-radius: 8;
+    -fx-border-color: #C5CAE9;     /* Slightly darker border */
+    -fx-border-radius: 8;
+    -fx-padding: 15;
+    -fx-alignment: center;
+}
+
+.info-text {
+    -fx-text-fill: #3F51B5; /* Indigo text color */
+    -fx-font-size: 12px;
+}
+
+/* --- PROFILE PAGE STYLES --- */
+
+.profile-header-bg {
+    -fx-background-color: linear-gradient(to right, #8B5CF6, #6200EA); /* Lighter to Dark Purple */
+    -fx-background-radius: 15 15 0 0; /* Top corners rounded */
+    -fx-padding: 40;
+}
+
+.profile-avatar {
+    -fx-fill: rgba(255,255,255,0.2); /* See-through white circle */
+    -fx-stroke: white;
+    -fx-stroke-width: 2;
+}
+
+.profile-label-small {
+    -fx-text-fill: #6B7280; /* Gray text for "Email", "Full Name" */
+    -fx-font-size: 12px;
+}
+
+.profile-value-text {
+    -fx-text-fill: #111827; /* Dark text for the actual name/email */
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+.secondary-btn {
+    -fx-background-color: #E5E7EB; /* Light Gray */
+    -fx-text-fill: #374151; /* Dark Gray Text */
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+    -fx-padding: 10 20;
+}
+
+/* --- PROFILE HEADER TEXT --- */
+.profile-hero-name {
+    -fx-text-fill: white;
+    -fx-font-size: 19px;
+    -fx-font-weight: bold;
+}
+
+.profile-hero-handle {
+    -fx-text-fill: white;
+    -fx-opacity: 0.8;
+    -fx-font-size: 14px;
+}
