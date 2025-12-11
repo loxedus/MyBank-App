@@ -7,6 +7,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import java.io.IOException;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 
 public class LoginController {
 
@@ -36,5 +39,22 @@ public class LoginController {
 
         stage.setScene(scene);
         stage.show();
+    }
+    @FXML
+    public void handleSignUpSwitch(ActionEvent event) {
+        try {
+            // Load the Sign Up screen
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("SignUp.fxml"));
+            Parent root = loader.load();
+
+            // Get the current window and swap the scene
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

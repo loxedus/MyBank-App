@@ -571,3 +571,203 @@
     -fx-opacity: 0.8;
     -fx-font-size: 14px;
 }
+
+/* ==============================================
+   7. DEPOSIT SCREEN STYLES
+   ============================================== */
+
+/* The white box in the middle */
+.deposit-card {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 10;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 20, 0, 0, 0); /* Soft shadow */
+    -fx-padding: 30;
+    -fx-alignment: center; /* Centers items inside */
+    -fx-spacing: 20;       /* Space between Label, Input, and Button */
+    -fx-min-width: 350;
+    -fx-max-width: 400;
+}
+
+/* The "Deposit Funds" Text */
+.deposit-title {
+    -fx-text-fill: #111111;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+
+/* ==============================================
+   DROPDOWN MENU (COMBOBOX) STYLES
+   ============================================== */
+
+/* The Main Box */
+.combo-box {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #E5E7EB; /* Light Grey Border */
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-pref-width: 250;       /* Make it wide enough */
+    -fx-font-size: 13px;
+}
+
+/* Hover Effect */
+.combo-box:hover {
+    -fx-border-color: #6200EA; /* Purple Border on Hover */
+}
+
+/* The Text Inside */
+.combo-box .list-cell {
+    -fx-text-fill: #333333;
+    -fx-padding: 5 10 5 10;
+}
+
+/* The Arrow Button on the right */
+.combo-box .arrow-button {
+    -fx-background-color: transparent;
+}
+
+.combo-box .arrow {
+    -fx-background-color: #666666; /* Dark Grey Arrow */
+}
+
+/* --- WITHDRAW SCREEN --- */
+
+/* Withdraw Button (Red) */
+.button-withdraw {
+    -fx-background-color: #e74c3c;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-background-radius: 5;
+    -fx-cursor: hand;
+    -fx-padding: 12;
+}
+
+.button-withdraw:hover {
+    -fx-background-color: #c0392b; /* Darker Red */
+}
+
+/* --- SIGN UP SCREEN --- */
+
+/* Container Layout */
+.vbox-container {
+    -fx-alignment: center;
+    -fx-padding: 20px;
+    -fx-spacing: 15px; /* Space between fields */
+    -fx-background-color: #FFFFFF;
+}
+
+/* Input Fields (Name, Email, etc.) */
+.input-field {
+    -fx-pref-width: 300px;
+    -fx-pref-height: 35px;
+    -fx-background-radius: 5;
+    -fx-border-color: #CCCCCC;
+    -fx-border-radius: 5;
+    -fx-padding: 5px;
+}
+
+/* Sign Up Button (Blue) */
+.button-signup {
+    -fx-background-color: #3498db; /* Blue */
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-background-radius: 5;
+    -fx-pref-width: 300px; /* Matches input width */
+    -fx-pref-height: 40px;
+    -fx-cursor: hand;
+}
+
+.button-signup:hover {
+    -fx-background-color: #2980b9; /* Darker Blue */
+}
+
+/* --- MODERN SIGN UP SCREEN --- */
+
+/* The main background behind the card */
+.signup-root {
+    -fx-background-color: #F4F7F6; /* Light gray background */
+}
+
+/* The white card centered on screen */
+.signup-card {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 10; /* Rounded card corners */
+    /* Soft shadow effect */
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 15, 0, 0, 5);
+    -fx-padding: 30px;
+    -fx-spacing: 15px; /* Space between form items */
+}
+
+/* Title Label */
+.signup-title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50; /* Dark text */
+}
+
+/* Modern Input Fields */
+.modern-input {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #bdc3c7; /* subtle gray border */
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-padding: 10px;
+    -fx-font-size: 14px;
+    /* Ensure they stretch to fill the card width nicely */
+    -fx-pref-width: 350px;
+}
+
+/* Highlight input border blue when clicked */
+.modern-input:focused {
+    -fx-border-color: #3498db;
+    -fx-border-width: 2px;
+}
+
+/* Primary Sign Up Button (Blue) */
+.modern-button-blue {
+    -fx-background-color: #3498db; /* App Primary Blue */
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 5px;
+    -fx-padding: 10px 20px;
+    -fx-cursor: hand;
+    -fx-pref-width: 350px; /* Match input width */
+}
+
+.modern-button-blue:hover {
+    -fx-background-color: #2980b9; /* Darker blue */
+}
+
+/* "Back to Login" Link */
+.secondary-link {
+    -fx-text-fill: #7f8c8d;
+    -fx-font-size: 13px;
+    -fx-cursor: hand;
+    -fx-border-color: transparent;
+    -fx-underline: false;
+}
+.secondary-link:hover {
+    -fx-text-fill: #3498db;
+    -fx-underline: true;
+}
+
+/* --- FIX FOR DROPDOWN (COMBOBOX) --- */
+
+.combo-box {
+    /* Make it slightly taller than text fields to fit the text + arrow */
+    -fx-pref-height: 45px;
+    -fx-background-radius: 5;
+    -fx-border-color: #CCCCCC;
+    -fx-border-radius: 5;
+    -fx-background-color: white;
+}
+
+/* This fixes the text inside the box */
+.combo-box .list-cell {
+    -fx-alignment: CENTER_LEFT; /* Vertically center the text */
+    -fx-padding: 5px 10px;      /* Add breathing room around text */
+    -fx-background-color: transparent;
+}

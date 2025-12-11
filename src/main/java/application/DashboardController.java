@@ -62,11 +62,40 @@ public class DashboardController {
 
     @FXML
     public void handleQuickDeposit(ActionEvent event) {
-        System.out.println("Deposit Clicked");
+        try {
+            // 1. Load the Deposit popup
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Deposit.fxml"));
+            Parent root = loader.load();
+
+            // 2. Create the new Window
+            Stage stage = new Stage();
+            stage.setTitle("Deposit Funds");
+            stage.setScene(new Scene(root));
+
+            // 3. Show it!
+            stage.show();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("Could not load Deposit.fxml");
+        }
     }
 
     @FXML
     public void handleQuickWithdraw(ActionEvent event) {
-        System.out.println("Withdraw Clicked");
+        try {
+            // Load the Withdraw FXML file
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Withdraw.fxml"));
+            Parent root = loader.load();
+
+            // Create and show the new window
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.setTitle("Withdraw Money");
+            stage.show();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

@@ -2,6 +2,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
@@ -39,7 +40,11 @@
                            <VBox.margin>
                               <Insets top="20.0" />
                            </VBox.margin></Button>
-                        <Label styleClass="footer-text" text="Demo credentials: username: demo / password: demo123" />
+                        <Hyperlink alignment="CENTER" contentDisplay="CENTER" onAction="#handleSignUpSwitch" text="Don't have an account? Sign Up">
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </Hyperlink>
                      </children>
                   </VBox>
                </children>
