@@ -1,30 +1,53 @@
 package application;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label; // Import if using labels
+import javafx.stage.Modality;
 import javafx.stage.Stage;
-import javafx.fxml.FXML;
 import java.io.IOException;
 
 public class AccountsController {
 
-    // --- Helper Method for Switching Scenes ---
-    private void switchScene(ActionEvent event, String fxmlFile) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource(fxmlFile));
-        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root);
-        // Load CSS
-        if (Main.class.getResource("styles.css") != null) {
-            scene.getStylesheets().add(Main.class.getResource("styles.css").toExternalForm());
-        }
-        stage.setScene(scene);
-        stage.show();
+    // --- 1. DETAILS POPUP LOGIC (Existing) ---
+    @FXML
+    public void viewSavings(ActionEvent event) {
+        openDetailsPopup("Savings Account", "1234 5678 9012", "$40,000.00", "Active", "Oct 24, 2023");
     }
 
-    // --- Sidebar Button Actions ---
+    @FXML
+    public void viewChecking(ActionEvent event) {
+        openDetailsPopup("Checking Account", "9876 5432 1098", "$1,500.50", "Active", "Jan 12, 2024");
+    }
+
+    private void openDetailsPopup(String type, String number, String balance, String status, String date) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("AccountDetails.fxml"));
+            Parent root = loader.load();
+
+            AccountDetailsController controller = loader.getController();
+            controller.setAccountDetails(type, number, balance, status, date);
+
+            Stage stage = new Stage();
+            Scene scene = new Scene(root);
+            if (Main.class.getResource("styles.css") != null) {
+                scene.getStylesheets().add(Main.class.getResource("styles.css").toExternalForm());
+            }
+            stage.setScene(scene);
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.show();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    // --- 2. SIDEBAR NAVIGATION (THE MISSING PART) ---
+    // You need these because the sidebar is present on this screen too!
 
     @FXML
     public void switchToDashboard(ActionEvent event) throws IOException {
@@ -33,7 +56,8 @@ public class AccountsController {
 
     @FXML
     public void switchToAccounts(ActionEvent event) {
-        System.out.println("Already on Accounts");
+        // We are already on Accounts, so do nothing or print a message
+        System.out.println("Already on Accounts page");
     }
 
     @FXML
@@ -43,7 +67,7 @@ public class AccountsController {
 
     @FXML
     public void switchToTransfer(ActionEvent event) throws IOException {
-        switchScene(event, "Transfer.fxml");
+        switchScene(event, "Transfer.fxml"); // Or whatever your file is named
     }
 
     @FXML
@@ -56,13 +80,16 @@ public class AccountsController {
         switchScene(event, "Login.fxml");
     }
 
-    @FXML
-    public void viewSavings(ActionEvent event) {
-        System.out.println("View Savings clicked!");
-    }
-
-    @FXML
-    public void viewChecking(ActionEvent event) {
-        System.out.println("View Checking clicked!");
+    // --- Helper Method ---
+    private void switchScene(ActionEvent event, String fxmlFile) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource(fxmlFile));
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        // Re-attach CSS
+        if (Main.class.getResource("styles.css") != null) {
+            scene.getStylesheets().add(Main.class.getResource("styles.css").toExternalForm());
+        }
+        stage.setScene(scene);
+        stage.show();
     }
 }

@@ -198,7 +198,7 @@
     -fx-padding: 10;
 }
 
-/* 2. Hide the ugly default gray header bar */
+/* 2. Hide the ugly default header bar */
 .table-view .column-header-background {
     -fx-background-color: transparent;
 }
@@ -429,36 +429,6 @@
     -fx-min-height: 40;      /* Prevent shrinking */
 }
 
-/* --- PROFESSIONAL TABLE --- */
-.table-view {
-    -fx-background-color: white;
-    -fx-background-radius: 15;
-    -fx-border-color: transparent;
-    -fx-padding: 0;
-}
-
-.table-view .column-header-background {
-    -fx-background-color: transparent;
-}
-
-.table-view .column-header .label {
-    -fx-text-fill: #A3AED0;
-    -fx-font-weight: bold;
-    -fx-font-size: 11px;
-    -fx-padding: 15 0 15 0;
-}
-
-.table-row-cell {
-    -fx-background-color: white;
-    -fx-border-color: transparent transparent #F4F7FE transparent;
-    -fx-padding: 10;
-}
-
-.table-cell {
-    -fx-text-fill: #2B3674;
-    -fx-font-size: 14px;
-}
-
 /* --- FILTER HEADER --- */
 .filter-title {
     -fx-font-size: 14px;
@@ -607,6 +577,8 @@
     -fx-background-radius: 5;
     -fx-pref-width: 250;       /* Make it wide enough */
     -fx-font-size: 13px;
+    /* Make it slightly taller than text fields to fit the text + arrow */
+    -fx-pref-height: 45px;
 }
 
 /* Hover Effect */
@@ -618,6 +590,8 @@
 .combo-box .list-cell {
     -fx-text-fill: #333333;
     -fx-padding: 5 10 5 10;
+    -fx-alignment: CENTER_LEFT; /* Vertically center the text */
+    -fx-background-color: transparent;
 }
 
 /* The Arrow Button on the right */
@@ -754,20 +728,77 @@
     -fx-underline: true;
 }
 
-/* --- FIX FOR DROPDOWN (COMBOBOX) --- */
+/* --- MODERN ACCOUNT DETAILS CARD --- */
 
-.combo-box {
-    /* Make it slightly taller than text fields to fit the text + arrow */
-    -fx-pref-height: 45px;
-    -fx-background-radius: 5;
-    -fx-border-color: #CCCCCC;
-    -fx-border-radius: 5;
-    -fx-background-color: white;
+/* The main container card */
+.details-card {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 12; /* Softer, rounder corners */
+    /* A subtle, modern drop shadow for depth */
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.08), 20, 0, 0, 4);
+    -fx-padding: 30px;
 }
 
-/* This fixes the text inside the box */
-.combo-box .list-cell {
-    -fx-alignment: CENTER_LEFT; /* Vertically center the text */
-    -fx-padding: 5px 10px;      /* Add breathing room around text */
-    -fx-background-color: transparent;
+/* The main title "Account Details" */
+.details-title {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50; /* Dark Blue (Primary app color) */
+}
+
+/* Each row containing a label and a value */
+.details-row {
+    /* A very light gray line to separate rows cleanly */
+    -fx-border-color: transparent transparent #f0f2f5 transparent;
+    -fx-border-width: 0 0 1 0;
+    /* More vertical breathing room */
+    -fx-padding: 12px 0;
+}
+
+/* Remove border from the last row for a cleaner look */
+.details-vbox > .details-row:last-child {
+    -fx-border-color: transparent;
+}
+
+/* Left-side labels (e.g., "Account Type") */
+.details-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #95a5a6; /* A soft, secondary gray */
+    -fx-font-weight: normal;
+}
+
+/* Right-side values (e.g., "Savings", "$40,000.00") */
+.details-value {
+    -fx-font-size: 15px;
+    -fx-text-fill: #34495e; /* A darker, bolder gray-blue for emphasis */
+    -fx-font-weight: bold;
+}
+
+/* Modern "Close" Button (Gray) */
+.details-close-button {
+    -fx-background-color: #bdc3c7; /* Neutral gray */
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-background-radius: 20; /* Fully rounded "pill" shape */
+    -fx-padding: 10px 30px;
+    -fx-cursor: hand;
+}
+
+.details-close-button:hover {
+    -fx-background-color: #95a5a6; /* Slightly darker on hover */
+}
+
+/* --- STATUS COLORS --- */
+
+/* Green for Active accounts */
+.status-active {
+    -fx-text-fill: #27ae60; /* Emerald Green */
+    -fx-font-weight: bold;
+}
+
+/* Red for Closed/Frozen accounts */
+.status-inactive {
+    -fx-text-fill: #e74c3c; /* Soft Red */
+    -fx-font-weight: bold;
 }

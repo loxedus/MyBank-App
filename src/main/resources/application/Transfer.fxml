@@ -86,28 +86,28 @@
                         <VBox prefHeight="200.0" prefWidth="100.0">
                            <children>
                               <Label styleClass="filter-label" text="From Account" />
-                              <ComboBox fx:id="accountSelector" maxWidth="1.7976931348623157E308" prefHeight="70.0" prefWidth="550.0" promptText="Savings - 1234567890" styleClass="combo-box" />
+                              <ComboBox fx:id="accountSelector" maxWidth="1.7976931348623157E308" prefHeight="70.0" prefWidth="550.0" styleClass="combo-box" />
                            </children>
                         </VBox>
                         <VBox prefHeight="200.0" prefWidth="100.0">
                            <children>
                               <Label styleClass="filter-label" text="To Account Number" />
-                              <TextField promptText="Enter account number..." styleClass="filter-field" />
+                              <TextField fx:id="recipientField" promptText="Enter account number..." styleClass="filter-field" />
                            </children>
                         </VBox>
                         <VBox prefHeight="200.0" prefWidth="100.0">
                            <children>
                               <Label styleClass="filter-label" text="Amount" />
-                              <TextField promptText="0.00" styleClass="filter-field" />
+                              <TextField fx:id="amountField" promptText="0.00" styleClass="filter-field" />
                            </children>
                         </VBox>
                         <VBox prefHeight="200.0" prefWidth="100.0">
                            <children>
                               <Label styleClass="filter-label" text="Notes (Optional)" />
-                              <TextArea prefHeight="75.0" prefWidth="550.0" promptText="Add a note for this transfer..." styleClass="notes-area" />
+                              <TextArea fx:id="notesArea" prefHeight="75.0" prefWidth="550.0" promptText="Add a note for this transfer..." styleClass="notes-area" />
                            </children>
                         </VBox>
-                        <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleTransfer" styleClass="primary-button" text="Transfer Funds" />
+                        <Button fx:id="transferBtn" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleTransfer" styleClass="primary-button" text="Transfer Funds" />
                      </children>
                   </VBox>
                   <HBox maxWidth="600.0" prefHeight="100.0" prefWidth="200.0" styleClass="info-box">

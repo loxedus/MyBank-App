@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+
+<AnchorPane prefHeight="500.0" prefWidth="600.0" styleClass="details-card" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AccountDetailsController">
+   <children>
+      <VBox layoutX="66.0" layoutY="69.0" prefHeight="330.0" prefWidth="468.0" spacing="15.0">
+         <children>
+            <Label styleClass="details-title" text="Account Details" />
+            <Separator prefWidth="200.0" />
+            <VBox prefHeight="208.0" prefWidth="468.0" spacing="15.0" styleClass="details-vbox" stylesheets="@styles.css">
+               <children>
+                  <HBox prefHeight="100.0" prefWidth="200.0" styleClass="details-row" stylesheets="@styles.css">
+                     <children>
+                        <Label styleClass="details-label" text="Account Type" />
+                        <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                        <Label fx:id="typeLabel" styleClass="details-value" text="Savings" />
+                     </children>
+                  </HBox>
+                  <HBox layoutX="30.0" layoutY="30.0" prefHeight="100.0" prefWidth="200.0" styleClass="details-row" stylesheets="@styles.css">
+                     <children>
+                        <Label styleClass="details-label" text="Account Number" />
+                        <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                        <Label fx:id="numberLabel" styleClass="details-value" text="1234 5678 90" />
+                     </children>
+                  </HBox>
+                  <HBox layoutX="30.0" layoutY="107.0" prefHeight="100.0" prefWidth="200.0" styleClass="details-row" stylesheets="@styles.css">
+                     <children>
+                        <Label styleClass="details-label" text="Current Balance" />
+                        <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                        <Label fx:id="balanceLabel" styleClass="details-value" text="₱40,000.00" />
+                     </children>
+                  </HBox>
+                  <HBox layoutX="30.0" layoutY="152.0" prefHeight="100.0" prefWidth="200.0" styleClass="details-row" stylesheets="@styles.css">
+                     <children>
+                        <Label styleClass="details-label" text="Status" />
+                        <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                        <Label fx:id="statusLabel" text="Active">
+                           <styleClass>
+                              <String fx:value="details-value" />
+                              <String fx:value="status-active" />
+                           </styleClass>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="30.0" layoutY="192.0" prefHeight="100.0" prefWidth="200.0" styleClass="details-row" stylesheets="@styles.css">
+                     <children>
+                        <Label styleClass="details-label" text="Date Opened" />
+                        <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                        <Label fx:id="dateLabel" styleClass="details-value" text="Oct 24, 2023" />
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+            </VBox>
+            <Button mnemonicParsing="false" onAction="#handleClose" styleClass="details-close-button" stylesheets="@styles.css" text="Close" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

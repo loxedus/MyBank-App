@@ -34,7 +34,12 @@ public class DashboardController {
 
     @FXML
     public void switchToAccounts(ActionEvent event) throws IOException {
-        switchScene(event, "Accounts.fxml");
+        Parent root = FXMLLoader.load(getClass().getResource("Accounts.fxml"));
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        scene.getStylesheets().add(Main.class.getResource("styles.css").toExternalForm());
+        stage.setScene(scene);
+        stage.show();
     }
 
     @FXML
