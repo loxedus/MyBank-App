@@ -706,9 +706,9 @@
     -fx-font-size: 16px;
     -fx-font-weight: bold;
     -fx-background-radius: 5px;
-    -fx-padding: 10px 20px;
     -fx-cursor: hand;
-    -fx-pref-width: 350px; /* Match input width */
+    -fx-pref-width: 150px; /* Match input width */
+    -fx-pref-height: 40px;
 }
 
 .modern-button-blue:hover {
@@ -801,4 +801,26 @@
 .status-inactive {
     -fx-text-fill: #e74c3c; /* Soft Red */
     -fx-font-weight: bold;
+}
+
+/* --- POPUP BUTTON CONTAINER --- */
+.popup-buttons {
+    -fx-spacing: 15px;
+    -fx-alignment: center;
+    -fx-padding: 10px 0 0 0;
+}
+
+/* Secondary Button (Gray for Cancel) */
+.modern-button-gray {
+    -fx-background-color: #bdc3c7;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 5px;
+    -fx-cursor: hand;
+    -fx-pref-width: 120px;
+    -fx-pref-height: 40px;
+}
+.modern-button-gray:hover {
+    -fx-background-color: #95a5a6;
 }

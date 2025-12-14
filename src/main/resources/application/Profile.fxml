@@ -135,8 +135,8 @@
                         </VBox>
                         <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0">
                            <children>
-                              <Button mnemonicParsing="false" onAction="#enableEditMode" styleClass="primary-button" text="Edit Profile" />
-                              <Button mnemonicParsing="false" onAction="#showChangePassword" prefHeight="47.0" prefWidth="140.0" styleClass="secondary-btn" text="Change Password" />
+                              <Button mnemonicParsing="false" onAction="#handleEditProfile" styleClass="primary-button" text="Edit Profile" />
+                              <Button mnemonicParsing="false" onAction="#handleChangePassword" prefHeight="47.0" prefWidth="140.0" styleClass="secondary-btn" text="Change Password" />
                            </children>
                         </HBox>
                      </children>

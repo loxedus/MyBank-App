@@ -64,4 +64,37 @@ public class ProfileController {
     public void showChangePassword(ActionEvent event) {
         System.out.println("Edit password was clicked!");
     }
+
+    // MAO NI BAG O DIRI NGA METHODS LEE
+    @FXML
+    public void handleEditProfile(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("EditProfile.fxml"));
+            Parent root = loader.load();
+            Stage stage = new Stage();
+            Scene scene = new Scene(root);
+            scene.getStylesheets().add(Main.class.getResource("styles.css").toExternalForm());
+            stage.setScene(scene);
+            stage.setTitle("Edit Profile");
+            stage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    public void handleChangePassword(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("ChangePassword.fxml"));
+            Parent root = loader.load();
+            Stage stage = new Stage();
+            Scene scene = new Scene(root);
+            scene.getStylesheets().add(Main.class.getResource("styles.css").toExternalForm());
+            stage.setScene(scene);
+            stage.setTitle("Change Password");
+            stage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }
